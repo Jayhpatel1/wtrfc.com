@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>The Real Fintech AI Company - Complete Real Estate Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: none;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links.active {
+            display: flex;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            flex-direction: column;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 10px 15px;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .auth-section {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .mobile-menu {
+            display: block;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #667eea;
+        }
+
+        .user-menu {
+            position: relative;
+            display: none;
+        }
+
+        .user-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .user-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .user-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(5px);
+        }
+
+        .user-dropdown a {
+            display: block;
+            padding: 15px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .user-dropdown a:hover {
+            background: #f8f9fa;
+            color: #667eea;
+        }
+
+        .user-dropdown a:last-child {
+            border-bottom: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 120px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.05"><polygon points="0,0 1000,0 1000,100 0,20"/></svg>');
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease 0.2s both;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.4s both;
+            flex-wrap: wrap;
+        }
+
+        .hero-button {
+            padding: 18px 35px;
+            border: none;
+            border-radius: 35px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .primary-btn {
+            background: white;
+            color: #667eea;
+        }
+
+        .secondary-btn {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 2px solid white;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        /* Main Content Sections */
+        .main-content {
+            display: block;
+        }
+
+        .main-content.hidden {
+            display: none;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 120px 0;
+            background: white;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.05), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+            transform: rotate(45deg) translate(-50%, -50%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border-color: rgba(102, 126, 234, 0.2);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        /* Dashboard */
+        .dashboard {
+            display: none;
+            min-height: 100vh;
+            padding-top: 100px;
+            background: white;
+        }
+
+        .dashboard.active {
+            display: block;
+        }
+
+        .dashboard-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .dashboard-tabs {
+            display: flex;
+            gap: 0;
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 15px;
+            padding: 5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            padding: 15px 25px;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Property Search */
+        .property-search {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+        }
+
+        .search-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            margin-top: 3rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .form-group select,
+        .form-group input,
+        .form-group textarea {
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .search-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Order Cards */
+        .order-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .order-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .order-id {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1rem;
+        }
+
+        .order-status {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .status-pending { background: #fff3cd; color: #856404; }
+        .status-confirmed { background: #d1ecf1; color: #0c5460; }
+        .status-completed { background: #d4edda; color: #155724; }
+        .status-cancelled { background: #f8d7da; color: #721c24; }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 3% auto;
+            padding: 2.5rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 85vh;
+            overflow-y: auto;
+            animation: modalSlideIn 0.4s ease;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: #667eea;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: #667eea;
+            font-size: 1.3rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            color: #999;
+        }
+
+        /* Notifications */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            z-index: 3000;
+            opacity: 0;
+            transform: translateX(400px);
+            transition: all 0.4s ease;
+        }
+
+        .notification.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .notification.error { background: #f44336; }
+        .notification.warning { background: #ff9800; }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Mobile Responsiveness */
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+                position: static;
+                background: transparent;
+                flex-direction: row;
+                padding: 0;
+                box-shadow: none;
+                width: auto;
+            }
+
+            .mobile-menu {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100vw;
+                left: 0;
+                top: 60px;
+                position: absolute;
+                background: white;
+                z-index: 1002;
+                padding: 1.5rem 0;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+            .nav-links a {
+                font-size: 1.2rem;
+                padding: 18px 0;
+                width: 100vw;
+                text-align: center;
+            }
+            .mobile-menu {
+                display: block;
+                font-size: 2rem;
+                padding: 0.5rem 1rem;
+            }
+            .container {
+                padding: 0 10px;
+            }
+            .hero {
+                padding: 80px 0 40px 0;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero-button {
+                width: 100%;
+                max-width: 320px;
+                font-size: 1.1rem;
+                padding: 18px 0;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            #propertyMap {
+                height: 220px !important;
+            }
+            .order-card {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+            }
+            .dashboard-tabs {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                font-size: 0.95rem;
+            }
+            .modal-content {
+                margin: 10% auto;
+                padding: 1.2rem;
+                width: 98%;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 5px;
+            }
+            .hero {
+                padding: 60px 0 20px 0;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .service-card, .search-form {
+                padding: 1rem;
+            }
+            .stat-card {
+                padding: 1rem;
+            }
+            #propertyMap {
+                height: 150px !important;
+            }
+        }
+
+        /* Utilities */
+        .hidden {
+            display: none !important;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-2 { margin-bottom: 1rem; }
+        .mt-2 { margin-top: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+        .mt-3 { margin-top: 1.5rem; }
+        /* Larger tap targets for buttons and links */
+        button, .btn, .hero-button, .tab-btn, .search-btn, .order-card button {
+            min-height: 48px;
+            min-width: 48px;
+            font-size: 1rem;
+        }
+        .order-card img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo" onclick="showHome()">The Real Fintech AI Company</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="showHome()">🏠 Home</a></li>
+                <li><a href="#" onclick="showSection('productsPage')">�� Products</a></li>
+                <li><a href="#" onclick="showSection('services')">🔧 Services</a></li>
+                <li><a href="#" onclick="showSection('properties')">🏢 Properties</a></li>
+                <li><a href="#" onclick="showDashboard()">📊 My Account</a></li>
+                <li><a href="#" onclick="openModal('contactModal')">📞 Contact</a></li>
+            </ul>
+            <div class="auth-section" id="authSection">
+                <button class="btn btn-secondary" onclick="openModal('loginModal')">Login</button>
+                <button class="btn btn-primary" onclick="openModal('signupModal')">Sign Up</button>
+            </div>
+            <div class="user-menu" id="userMenu">
+                <div class="user-avatar" onclick="toggleUserMenu()">
+                    <span id="userInitials">JD</span>
+                </div>
+                <div class="user-dropdown" id="userDropdown">
+                    <a href="#" onclick="showDashboard()">📊 Dashboard</a>
+                    <a href="#" onclick="showDashboard('orders')">📦 My Orders</a>
+                    <a href="#" onclick="showDashboard('profile')">👤 Profile</a>
+                    <a href="#" onclick="showDashboard('wallet')">💳 Wallet</a>
+                    <a href="#" onclick="showDashboard('offers')">🎁 Offers</a>
+                    <a href="#" onclick="logout()">🚪 Logout</a>
+                </div>
+            </div>
+            <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>🏠 Complete Real Estate AI Solutions</h1>
+                <p>Zero Brokerage Properties | Premium Deals at 1% | Construction to Demolition - Everything Under One AI-Powered Platform</p>
+                <div class="hero-buttons">
+                    <a href="#" class="hero-button primary-btn" onclick="showSection('properties')">🔍 Find Properties</a>
+                    <a href="#" class="hero-button secondary-btn" onclick="showSection('services')">🛠️ All Services</a>
+                    <a href="#" class="hero-button secondary-btn" onclick="openModal('signupModal')">🚀 Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Page Section (hidden by default) -->
+        <section id="productsPage" class="products hidden" style="background:white;padding:80px 0 60px 0;">
+            <div class="container">
+                <h2 class="section-title">🛒 Our Products</h2>
+                <p class="section-subtitle">Browse our exclusive range of real estate and home improvement products</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🏡</div>
+                        <h3>Smart Home Kit</h3>
+                        <p>Upgrade your home with AI-powered smart devices for security, lighting, and comfort.</p>
+                        <div class="service-price">₹19,999</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🛏️</div>
+                        <h3>Luxury Furniture Set</h3>
+                        <p>Premium modular furniture for living room, bedroom, and kitchen. Customizable designs.</p>
+                        <div class="service-price">₹1,25,000</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🎨</div>
+                        <h3>Designer Wall Paints</h3>
+                        <p>Eco-friendly, washable paints in trending colors. Free color consultation included.</p>
+                        <div class="service-price">₹4,999 per room</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔒</div>
+                        <h3>Property Legal Kit</h3>
+                        <p>All-in-one legal documentation and verification kit for property buyers and sellers.</p>
+                        <div class="service-price">₹9,999</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">🏗️ Complete Real Estate Ecosystem</h2>
+                <p class="section-subtitle">From property search to final decoration - everything you need under one AI-powered platform</p>
+                <div class="services-grid">
+                    <div class="service-card" onclick="openServiceModal('property')">
+                        <div class="service-icon">🏠</div>
+                        <h3>Buy/Sell/Rent Properties</h3>
+                        <p>AI-powered property matching with zero brokerage on regular properties and just 1% on premium deals.</p>
+                        <div class="service-price">💰 Zero Brokerage | 1% Premium</div>
+                    </div>
+                    <div class="service-card" onclick="openServiceModal('furniture')">
+                        <div class="service-icon">🛋️</div>
+                        <h3>Furniture & Interiors</h3>
+                        <p>Complete furniture solutions with AI-powered design recommendations for your perfect home setup.</p>
+                        <div class="service-price">🎨 Custom Design Packages</div>
+                    </div>
+                    <div class="service-card" onclick="openServiceModal('painting')">
+                        <div class="service-icon">🎨</div>
+                        <h3>Painting & Decoration</h3>
+                        <p>Professional painting services with color consultation and premium quality materials.</p>
+                        <div class="service-price">🖌️ 2 Year Warranty</div>
+                    </div>
+                    <div class="service-card" onclick="openServiceModal('construction')">
+                        <div class="service-icon">🏗️</div>
+                        <h3>Construction & Engineering</h3>
+                        <p>Complete construction services from foundation to finishing with certified engineers and architects.</p>
+                        <div class="service-price">⚙️ End-to-End Solutions</div>
+                    </div>
+                    <div class="service-card" onclick="openServiceModal('labor')">
+                        <div class="service-icon">👷</div>
+                        <h3>Labor & Contractors</h3>
+                        <p>Verified skilled professionals for all your construction and maintenance needs.</p>
+                        <div class="service-price">✅ Background Verified</div>
+                    </div>
+                    <div class="service-card" onclick="openServiceModal('renovation')">
+                        <div class="service-icon">🔨</div>
+                        <h3>Renovation & Demolition</h3>
+                        <p>Complete renovation services from minor repairs to full demolition and reconstruction.</p>
+                        <div class="service-price">🏠 Complete Makeover</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Property Search Section -->
+        <section id="properties" class="property-search">
+            <div class="container">
+                <h2 class="section-title">🔍 AI-Powered Property Search</h2>
+                <p class="section-subtitle">Find your perfect property with our advanced AI matching system</p>
+                <form class="search-form" onsubmit="searchProperties(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="propertyType">🏢 Property Type</label>
+                            <select id="propertyType" name="propertyType" required>
+                                <option value="">Select Property Type</option>
+                                <option value="apartment">🏠 Apartment</option>
+                                <option value="villa">🏡 Villa</option>
+                                <option value="house">🏘️ Independent House</option>
+                                <option value="plot">📐 Plot/Land</option>
+                                <option value="commercial">🏢 Commercial Space</option>
+                                <option value="farmhouse">🌾 Farm House</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="transactionType">💼 Transaction Type</label>
+                            <select id="transactionType" name="transactionType" required>
+                                <option value="">Select Transaction</option>
+                                <option value="buy">💰 Buy</option>
+                                <option value="sell">💵 Sell</option>
+                                <option value="rent">🏠 Rent</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">📍 Location</label>
+                            <input type="text" id="location" name="location" placeholder="Enter city, area, or landmark" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">💰 Budget Range</label>
+                            <select id="budget" name="budget" required>
+                                <option value="">Select Budget</option>
+                                <option value="0-25">Under ₹25 Lakhs</option>
+                                <option value="25-50">₹25L - ₹50L</option>
+                                <option value="50-100">₹50L - ₹1 Crore</option>
+                                <option value="100-200">₹1Cr - ₹2Cr</option>
+                                <option value="200+">Above ₹2 Crore</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bhk">🛏️ BHK Configuration</label>
+                            <select id="bhk" name="bhk">
+                                <option value="">Any Configuration</option>
+                                <option value="1">1 BHK</option>
+                                <option value="2">2 BHK</option>
+                                <option value="3">3 BHK</option>
+                                <option value="4">4+ BHK</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="preferences">🎯 Special Preferences</label>
+                            <select id="preferences" name="preferences">
+                                <option value="">Any Preference</option>
+                                <option value="furnished">Fully Furnished</option>
+                                <option value="parking">Parking Required</option>
+                                <option value="gym">Gym/Fitness Center</option>
+                                <option value="pool">Swimming Pool</option>
+                                <option value="security">24/7 Security</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="search-btn">🔍 Search Properties with AI</button>
+                </form>
+                <div id="propertyResults"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard" id="dashboard">
+        <div class="dashboard-header">
+            <div class="container">
+                <h2>👋 Welcome back, <span id="userName">John Doe</span>!</h2>
+                <p>Manage all your real estate needs from one powerful dashboard</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="dashboard-tabs">
+                <button class="tab-btn active" onclick="showTab('overview')">📊 Overview</button>
+                <button class="tab-btn" onclick="showTab('orders')">📦 My Orders</button>
+                <button class="tab-btn" onclick="showTab('properties')">🏠 Properties</button>
+                <button class="tab-btn" onclick="showTab('profile')">👤 Profile</button>
+                <button class="tab-btn" onclick="showTab('wallet')">💳 Wallet</button>
+                <button class="tab-btn" onclick="showTab('offers')">🎁 Offers</button>
+            </div>
+
+            <!-- Overview Tab -->
+            <div id="tab-overview" class="tab-content active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">🛍️ Active Orders</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">₹4,50,000</div>
+                        <div class="stat-label">💰 Total Spent</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2,350</div>
+                        <div class="stat-label">🎁 Reward Points</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Gold</div>
+                        <div class="stat-label">👑 Membership</div>
+                    </div>
+                </div>
+
+                <h3 class="mb-3">📈 Recent Activity</h3>
+                <div class="order-card">
+                    <div class="order-header">
+                        <span class="order-id">#RF2025001</span>
+                        <span class="order-status status-confirmed">In Progress</span>
+                    </div>
+                    <p><strong>🎨 Service:</strong> Complete Interior Design</p>
+                    <p><strong>💰 Amount:</strong> ₹1,25,000</p>
+                    <p><strong>📅 Date:</strong> January 25, 2025</p>
+                    <p><strong>📍 Location:</strong> Ramnagar-D, Bhavnagar</p>
+                </div>
+
+                <div class="order-card">
+                    <div class="order-header">
+                        <span class="order-id">#RF2025002</span>
+                        <span class="order-status status-pending">Pending Payment</span>
+                    </div>
+                    <p><strong>🏠 Service:</strong> Property Purchase</p>
+                    <p><strong>💰 Amount:</strong> ₹85,00,000</p>
+                    <p><strong>📅 Date:</strong> January 23, 2025</p>
+                    <p><strong>📍 Location:</strong> Ramnagar-D, Bhavnagar</p>
+                </div>
+            </div>
+
+            <!-- Orders Tab -->
+            <div id="tab-orders" class="tab-content">
+                <h3 class="mb-3">📦 Order Management</h3>
+                <div class="order-card">
+                    <div class="order-header">
+                        <span class="order-id">#RF2025001</span>
+                        <span class="order-status status-completed">Completed</span>
+                    </div>
+                    <p><strong>🔧 Service:</strong> Plumbing & Electrical Work</p>
+                    <p><strong>💰 Amount:</strong> ₹45,000</p>
+                    <p><strong>📅 Completion:</strong> January 20, 2025</p>
+                    <p><strong>⭐ Rating:</strong> 5/5 Stars</p>
+                    <button class="btn btn-secondary mt-2" onclick="downloadInvoice('RF2025001')">📄 Download Invoice</button>
+                </div>
+
+                <div class="order-card">
+                    <div class="order-header">
+                        <span class="order-id">#RF2025002</span>
+                        <span class="order-status status-confirmed">In Progress</span>
+                    </div>
+                    <p><strong>🎨 Service:</strong> Complete Home Painting</p>
+                    <p><strong>💰 Amount:</strong> ₹75,000</p>
+                    <p><strong>📅 Started:</strong> January 22, 2025</p>
+                    <p><strong>📅 Expected Completion:</strong> January 30, 2025</p>
+                    <button class="btn btn-primary mt-2" onclick="trackOrder('RF2025002')">📍 Track Progress</button>
+                </div>
+
+                <div class="order-card">
+                    <div class="order-header">
+                        <span class="order-id">#RF2025003</span>
+                        <span class="order-status status-pending">Pending Approval</span>
+                    </div>
+                    <p><strong>🏗️ Service:</strong> Kitchen Renovation</p>
+                    <p><strong>💰 Amount:</strong> ₹2,25,000</p>
+                    <p><strong>📅 Requested:</strong> January 24, 2025</p>
+                    <p><strong>📝 Status:</strong> Waiting for site inspection</p>
+                    <button class="btn btn-secondary mt-2" onclick="cancelOrder('RF2025003')">❌ Cancel Order</button>
+                </div>
+            </div>
+
+            <!-- Properties Tab -->
+            <div id="tab-properties" class="tab-content">
+                <h3 class="mb-3">🏠 My Properties</h3>
+                <div class="order-card">
+                    <div class="order-header">
+                        <span class="order-id">🏠 Primary Residence</span>
+                        <span class="order-status status-completed">Owned</span>
+                    </div>
+                    <p><strong>📍 Address:</strong> 2BHK, Ramnagar-D, Bhavnagar</p>
+                    <p><strong>💰 Value:</strong> ₹85,00,000</p>
+                    <p><strong>📅 Purchased:</strong> December 2024</p>
+                    <p><strong>📄 Documents:</strong> All Clear</p>
+                    <button class="btn btn-primary mt-2" onclick="manageProperty('primary')">⚙️ Manage Property</button>
+                </div>
+
+                <div class="order-card">
+                    <div class="order-header">
+                        <span class="order-id">🏢 Investment Property</span>
+                        <span class="order-status status-pending">For Rent</span>
+                    </div>
+                    <p><strong>📍 Address:</strong> 1BHK, Ramnagar-D, Bhavnagar</p>
+                    <p><strong>💰 Rent:</strong> ₹25,000/month</p>
+                    <p><strong>📅 Listed:</strong> January 2025</p>
+                    <p><strong>👥 Inquiries:</strong> 12 interested buyers</p>
+                    <button class="btn btn-secondary mt-2" onclick="manageRental('investment')">📋 Manage Rental</button>
+                </div>
+            </div>
+
+            <!-- Profile Tab -->
+            <div id="tab-profile" class="tab-content">
+                <h3 class="mb-3">👤 Profile Settings</h3>
+                <form class="search-form" onsubmit="updateProfile(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullName">📝 Full Name</label>
+                            <input type="text" id="fullName" value="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">📧 Email</label>
+                            <input type="email" id="email" value="john.doe@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">📱 Phone Number</label>
+                            <input type="tel" id="phone" value="+91 98765 43210" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">🏠 Address</label>
+                            <textarea id="address" rows="2" required>Ramnagar-D, Bhavnagar, Gujarat, India</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="userType">👨‍💼 Account Type</label>
+                            <select id="userType" disabled>
+                                <option value="customer">Customer</option>
+                                <option value="broker">Broker</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="preferences">🎯 Preferences</label>
+                            <select id="preferences">
+                                <option value="all">All Communications</option>
+                                <option value="important">Important Only</option>
+                                <option value="none">No Communications</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="search-btn">💾 Update Profile</button>
+                </form>
+            </div>
+
+            <!-- Wallet Tab -->
+            <div id="tab-wallet" class="tab-content">
+                <h3 class="mb-3">💳 Wallet & Payments</h3>
+                <div class="stats-grid mb-3">
+                    <div class="stat-card">
+                        <div class="stat-number">₹12,500</div>
+                        <div class="stat-label">💰 Wallet Balance</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2,350</div>
+                        <div class="stat-label">🎁 Reward Points</div>
+                    </div>
+                </div>
+
+                <h4 class="mb-2">💳 Payment History</h4>
+                <div class="order-card">
+                    <div class="order-header">
+                        <span class="order-id">PAY#001</span>
+                        <span class="order-status status-completed">Success</span>
+                    </div>
+                    <p><strong>💰 Amount:</strong> ₹75,000</p>
+                    <p><strong>💳 Method:</strong> UPI Payment</p>
+                    <p><strong>📅 Date:</strong> January 22, 2025</p>
+                    <p><strong>🎯 For:</strong> Home Painting Service</p>
+                </div>
+
+                <div class="order-card">
+                    <div class="order-header">
+                        <span class="order-id">PAY#002</span>
+                        <span class="order-status status-pending">Processing</span>
+                    </div>
+                    <p><strong>💰 Amount:</strong> ₹25,000</p>
+                    <p><strong>💳 Method:</strong> Bank Transfer</p>
+                    <p><strong>📅 Date:</strong> January 24, 2025</p>
+                    <p><strong>🎯 For:</strong> Interior Consultation</p>
+                </div>
+
+                <h4 class="mb-2 mt-3">➕ Add Money to Wallet</h4>
+                <form class="search-form" onsubmit="addMoney(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="amount">💰 Amount</label>
+                            <input type="number" id="amount" placeholder="Enter amount" min="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="paymentMethod">💳 Payment Method</label>
+                            <select id="paymentMethod" required>
+                                <option value="">Select Method</option>
+                                <option value="upi">📱 UPI</option>
+                                <option value="card">💳 Debit/Credit Card</option>
+                                <option value="netbanking">🏦 Net Banking</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="search-btn">💰 Add Money</button>
+                </form>
+            </div>
+
+            <!-- Offers Tab -->
+            <div id="tab-offers" class="tab-content">
+                <h3 class="mb-3">🎁 Offers & Rewards</h3>
+                <div class="stats-grid mb-3">
+                    <div class="stat-card">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">🎉 Active Offers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">₹23,500</div>
+                        <div class="stat-label">💰 Total Savings</div>
+                    </div>
+                </div>
+
+                <div class="order-card">
+                    <div class="order-header">
+                        <span class="order-id">🎉 New Year Special</span>
+                        <span class="order-status status-confirmed">Active</span>
+                    </div>
+                    <p><strong>🎯 Offer:</strong> 25% off on all Interior Services</p>
+                    <p><strong>⏰ Valid Till:</strong> January 31, 2025</p>
+                    <p><strong>📝 Code:</strong> NEWYEAR25</p>
+                    <p><strong>💰 Max Discount:</strong> ₹50,000</p>
+                    <button class="btn btn-primary mt-2" onclick="useOffer('NEWYEAR25')">🎫 Use Offer</button>
+                </div>
+
+                <div class="order-card">
+                    <div class="order-header">
+                        <span class="order-id">🏠 Property Cashback</span>
+                        <span class="order-status status-confirmed">Active</span>
+                    </div>
+                    <p><strong>🎯 Offer:</strong> ₹10,000 cashback on property purchase</p>
+                    <p><strong>⏰ Valid Till:</strong> February 28, 2025</p>
+                    <p><strong>📝 Code:</strong> PROPBACK10K</p>
+                    <p><strong>💰 Minimum Purchase:</strong> ₹50,00,000</p>
+                    <button class="btn btn-primary mt-2" onclick="useOffer('PROPBACK10K')">🎫 Use Offer</button>
+                </div>
+
+                <div class="order-card">
+                    <div class="order-header">
+                        <span class="order-id">👑 Gold Member Exclusive</span>
+                        <span class="order-status status-confirmed">Active</span>
+                    </div>
+                    <p><strong>🎯 Offer:</strong> Free consultation for all services</p>
+                    <p><strong>⏰ Valid Till:</strong> Lifetime</p>
+                    <p><strong>📝 Code:</strong> GOLDMEMBER</p>
+                    <p><strong>💰 Value:</strong> Up to ₹5,000 per service</p>
+                    <button class="btn btn-primary mt-2" onclick="useOffer('GOLDMEMBER')">🎫 Use Offer</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Real Fintech AI Company</h3>
+                    <p>Your AI-powered one-stop solution for all real estate needs. From finding the perfect property to complete renovation services.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>🏠 Services</h3>
+                    <ul>
+                        <li><a href="#">Buy Properties</a></li>
+                        <li><a href="#">Sell Properties</a></li>
+                        <li><a href="#">Rent Properties</a></li>
+                        <li><a href="#">Interior Design</a></li>
+                        <li><a href="#">Construction</a></li>
+                        <li><a href="#">Renovation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>🔗 Quick Links</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>📞 Contact Info</h3>
+                    <ul>
+                        <li><a href="mailto:jay@therealfintech.com">📧 jay@therealfintech.com</a></li>
+                        <li><a href="tel:+919773081099">📱 +91 97730 81099</a></li>
+                        <li><a href="#">📍 Ramnagar-D, Bhavnagar, Gujarat, India</a></li>
+                        <li><a href="#">🕒 24/7 Customer Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Real Fintech AI Company. All rights reserved. | Powered by Advanced AI Technology</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>🔐 Welcome Back!</h2>
+            <form onsubmit="login(event)">
+                <div class="form-group">
+                    <label for="loginEmail">📧 Email Address</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">🔒 Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginType">👤 Login As</label>
+                    <select id="loginType" required>
+                        <option value="customer">🏠 Customer</option>
+                        <option value="broker">🏢 Broker</option>
+                    </select>
+                </div>
+                <button type="submit" class="search-btn">🚪 Login</button>
+                <p class="text-center mt-2">
+                    Don't have an account? 
+                    <a href="#" onclick="switchModal('loginModal', 'signupModal')" style="color: #667eea; font-weight: bold;">Sign up here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>🚀 Join The Real Fintech AI</h2>
+            <form onsubmit="signup(event)">
+                <div class="form-group">
+                    <label for="signupName">👤 Full Name</label>
+                    <input type="text" id="signupName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">📧 Email Address</label>
+                    <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPhone">📱 Phone Number</label>
+                    <input type="tel" id="signupPhone" placeholder="+91 98765 43210" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">🔒 Password</label>
+                    <input type="password" id="signupPassword" placeholder="Create strong password" required>
+                </div>
+                <div class="form-group">
+                    <label for="accountType">🎯 Account Type</label>
+                    <select id="accountType" required>
+                        <option value="">Select Account Type</option>
+                        <option value="customer">🏠 Customer - Buy/Sell/Rent Properties</option>
+                        <option value="broker">🏢 Broker - List and Manage Properties</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="interest">🎯 Primary Interest</label>
+                    <select id="interest" required>
+                        <option value="">Select your interest</option>
+                        <option value="buying">🏠 Buying Property</option>
+                        <option value="selling">💰 Selling Property</option>
+                        <option value="renting">🏠 Renting Property</option>
+                        <option value="services">🔧 Home Services</option>
+                        <option value="investment">📈 Property Investment</option>
+                    </select>
+                </div>
+                <button type="submit" class="search-btn">🎉 Create Account</button>
+                <p class="text-center mt-2">
+                    Already have an account? 
+                    <a href="#" onclick="switchModal('signupModal', 'loginModal')" style="color: #667eea; font-weight: bold;">Login here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Service Modal -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('serviceModal')">&times;</span>
+            <div id="serviceModalContent">
+                <!-- Dynamic content loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('orderModal')">&times;</span>
+            <h2>📦 Place Your Order</h2>
+            <form onsubmit="placeOrder(event)">
+                <div class="form-group">
+                    <label for="orderService">🔧 Service</label>
+                    <input type="text" id="orderService" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="orderDescription">📝 Description</label>
+                    <textarea id="orderDescription" rows="3" placeholder="Describe your requirements in detail..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="orderAddress">📍 Service Address</label>
+                    <textarea id="orderAddress" rows="2" placeholder="Enter complete service address..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="orderDate">📅 Preferred Date</label>
+                    <input type="date" id="orderDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="orderTime">⏰ Preferred Time</label>
+                    <select id="orderTime" required>
+                        <option value="">Select Time</option>
+                        <option value="morning">🌅 Morning (9 AM - 12 PM)</option>
+                        <option value="afternoon">☀️ Afternoon (12 PM - 4 PM)</option>
+                        <option value="evening">🌆 Evening (4 PM - 8 PM)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="orderBudget">💰 Budget Range</label>
+                    <select id="orderBudget" required>
+                        <option value="">Select Budget</option>
+                        <option value="0-10000">Under ₹10,000</option>
+                        <option value="10000-25000">₹10,000 - ₹25,000</option>
+                        <option value="25000-50000">₹25,000 - ₹50,000</option>
+                        <option value="50000-100000">₹50,000 - ₹1,00,000</option>
+                        <option value="100000+">Above ₹1,00,000</option>
+                    </select>
+                </div>
+                <button type="submit" class="search-btn">🎯 Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('contactModal')">&times;</span>
+            <h2>📞 Contact Us</h2>
+            <form onsubmit="sendMessage(event)">
+                <div class="form-group">
+                    <label for="contactName">👤 Name</label>
+                    <input type="text" id="contactName" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">📧 Email</label>
+                    <input type="email" id="contactEmail" placeholder="Your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactSubject">📝 Subject</label>
+                    <select id="contactSubject" required>
+                        <option value="">Select Subject</option>
+                        <option value="property">🏠 Property Inquiry</option>
+                        <option value="service">🔧 Service Request</option>
+                        <option value="support">❓ Technical Support</option>
+                        <option value="complaint">⚠️ Complaint</option>
+                        <option value="other">📋 Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">💬 Message</label>
+                    <textarea id="contactMessage" rows="4" placeholder="Your message..." required></textarea>
+                </div>
+                <button type="submit" class="search-btn">📤 Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <script>
+        // Global State Management
+        let currentUser = null;
+        let isLoggedIn = false;
+        let currentSection = 'home';
+        let activeTab = 'overview';
+
+        // Initialize Application
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check saved user session (Note: Using in-memory storage for compatibility)
+            showHome();
+            
+            // Set minimum date for order booking
+            const today = new Date().toISOString().split('T')[0];
+            const orderDateElement = document.getElementById('orderDate');
+            if (orderDateElement) {
+                orderDateElement.min = today;
+            }
+        });
+
+        // Authentication Functions
+        function login(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const type = document.getElementById('loginType').value;
+
+            if (email && password && type) {
+                const user = {
+                    id: Date.now(),
+                    name: type === 'broker' ? 'Rajesh Kumar (Broker)' : 'John Doe',
+                    email: email,
+                    phone: '+91 98765 43210',
+                    type: type,
+                    membershipTier: type === 'broker' ? 'Premium' : 'Gold',
+                    points: type === 'broker' ? 5000 : 2350,
+                    totalSpent: type === 'broker' ? 1000000 : 450000
+                };
+                loginUser(user);
+                closeModal('loginModal');
+                showNotification(`🎉 Welcome back${type === 'broker' ? ', Broker!' : '!'} You are now logged in.`);
+            }
+        }
+
+        // 2. Add Google Maps and Places Autocomplete to property search
+        // 3. Show a map and property markers based on search
+        // 4. Add sample property data and display results
+        // 5. Add high-quality images to hero and services sections
+        // 6. Add a placeholder for Google Maps API key
+
+        // Add this before </body>:
+        // Sample property data
+        const sampleProperties = [
+            {
+                id: 1,
+                title: "2BHK Apartment in Mumbai",
+                type: "apartment",
+                transaction: "buy",
+                city: "Mumbai",
+                area: "Andheri",
+                lat: 19.1197,
+                lng: 72.8468,
+                price: "₹85,00,000",
+                image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 2,
+                title: "Villa in Bangalore",
+                type: "villa",
+                transaction: "buy",
+                city: "Bangalore",
+                area: "Whitefield",
+                lat: 12.9698,
+                lng: 77.7499,
+                price: "₹2,50,00,000",
+                image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 3,
+                title: "1BHK for Rent in Delhi",
+                type: "apartment",
+                transaction: "rent",
+                city: "Delhi",
+                area: "Saket",
+                lat: 28.5245,
+                lng: 77.1855,
+                price: "₹25,000/month",
+                image: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 4,
+                title: "Commercial Space in Ahmedabad",
+                type: "commercial",
+                transaction: "buy",
+                city: "Ahmedabad",
+                area: "Navrangpura",
+                lat: 23.0415,
+                lng: 72.5609,
+                price: "₹1,20,00,000",
+                image: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=600&q=80"
+            }
+        ];
+
+        function searchProperties(event) {
+            event.preventDefault();
+            const type = document.getElementById('propertyType').value;
+            const transaction = document.getElementById('transactionType').value;
+            const location = document.getElementById('location').value.trim().toLowerCase();
+            // Simple filter for demo
+            const filtered = sampleProperties.filter(p => {
+                const matchesType = !type || p.type === type;
+                const matchesTransaction = !transaction || p.transaction === transaction;
+                const matchesLocation = !location || p.city.toLowerCase().includes(location) || p.area.toLowerCase().includes(location);
+                return matchesType && matchesTransaction && matchesLocation;
+            });
+            displayPropertyResults(filtered);
+        }
+
+        function displayPropertyResults(properties) {
+            const resultsDiv = document.getElementById('propertyResults');
+            if (!resultsDiv) return;
+            if (!properties.length) {
+                resultsDiv.innerHTML = '<p>No properties found for your search.</p>';
+                return;
+            }
+            resultsDiv.innerHTML = properties.map(prop => `
+                <div class="order-card" style="display:flex;align-items:center;gap:1.5rem;">
+                    <img src="${prop.image}" alt="${prop.title}" style="width:120px;height:80px;object-fit:cover;border-radius:10px;">
+                    <div>
+                        <strong>${prop.title}</strong><br>
+                        ${prop.area}, ${prop.city}<br>
+                        <span style="color:#667eea;font-weight:bold;">${prop.price}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // --- CORE NAVIGATION & MODAL FUNCTIONS ---
+        function showSection(sectionId) {
+            document.getElementById('mainContent').style.display = 'block';
+            document.getElementById('dashboard').classList.remove('active');
+            // Hide all main content sections
+            const sections = ['services', 'properties', 'productsPage'];
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.add('hidden');
+            });
+            // Show the requested section
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.classList.remove('hidden');
+                target.scrollIntoView({behavior: 'smooth'});
+            }
+        }
+        function showHome() {
+            document.getElementById('mainContent').style.display = 'block';
+            document.getElementById('dashboard').classList.remove('active');
+            // Show all main content sections
+            const sections = ['services', 'properties', 'productsPage'];
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.remove('hidden');
+            });
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+        function showDashboard(tab) {
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('dashboard').classList.add('active');
+            if (tab) showTab(tab);
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+        function showTab(tab) {
+            const tabs = ['overview','orders','properties','profile','wallet','offers'];
+            tabs.forEach(id => {
+                const el = document.getElementById('tab-' + id);
+                if (el) el.classList.remove('active');
+            });
+            const btns = document.querySelectorAll('.tab-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            if (tab) {
+                const tabEl = document.getElementById('tab-' + tab);
+                if (tabEl) tabEl.classList.add('active');
+                // Activate the correct button
+                btns.forEach(btn => {
+                    if (btn.textContent.includes(tab.charAt(0).toUpperCase() + tab.slice(1)) || btn.textContent.toLowerCase().includes(tab)) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+        }
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        function switchModal(fromId, toId) {
+            closeModal(fromId);
+            setTimeout(() => openModal(toId), 200);
+        }
+        function toggleUserMenu() {
+            const dropdown = document.getElementById('userDropdown');
+            dropdown.classList.toggle('active');
+        }
+        // --- END CORE NAVIGATION & MODAL FUNCTIONS ---
+
+        // --- Enhanced Mobile Menu Functionality ---
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+        // Auto-close mobile menu on link click
+        Array.from(document.querySelectorAll('.nav-links a')).forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.getElementById('navLinks');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Google Maps error handler
+        window.gm_authFailure = function() {
+            document.getElementById('mapError').textContent =
+                'Google Maps failed to load. Please check your API key and billing settings.';
+        };
+    </script>
+</body>
+</html>
+                
